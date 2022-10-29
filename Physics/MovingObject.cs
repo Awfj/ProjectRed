@@ -39,7 +39,7 @@ namespace ProjectRed
             mPushedRightWall = mPushesRightWall;
             mPushedLeftWall = mPushesLeftWall;
 
-            mPosition += mSpeed * Time.deltaTIme;
+            //mPosition += mSpeed * Time.deltaTIme;
 
             if (mPosition.Y < 0.0f)
             {

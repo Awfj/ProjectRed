@@ -46,5 +46,20 @@ namespace ProjectRed
             Walk,
             Jump,
         }
+
+        public void CharacterUpdate()
+        {
+            switch (mCurrentState)
+            {
+                case CharacterState.Stand:
+                    break;
+                case CharacterState.Sit:
+                    break;
+                case CharacterState.Walk:
+                    break;
+                case CharacterState.Jump:
+                    break;
+            }
+        }
     }
 }

@@ -1,11 +1,15 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
+//using Microsoft.Xna.Framework.Audio;
 
 namespace ProjectRed
 {
     public class Game1 : Game
     {
+        Song song;
+
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
@@ -26,6 +30,11 @@ namespace ProjectRed
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            song = Content.Load<Song>("music_background");
+            MediaPlayer.IsRepeating = true;
+            MediaPlayer.Play(song);
+            MediaPlayer.Volume = (float)0.4;
 
             // TODO: use this.Content to load your game content here
         }
