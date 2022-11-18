@@ -30,6 +30,9 @@ namespace ProjectRed
         public bool mWasOnGround;
         public bool mOnGround;
 
+        public bool mWasOnCeiling;
+        public bool mArCeiing;
+
         public void UpdatePhysics()
         {
             mOldPosition = mPosition;

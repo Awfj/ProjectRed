@@ -42,8 +42,11 @@ namespace ProjectRed
             //ground2 = new Ground(Content, mario, "aa", 1280, 648);
             //ground3 = new Ground(Content, mario, "aa", 2560, 648);
 
+            kutular1 = new Ground(Content, mario, "kutular", 500, 440);
+
             currentGroundList = new List<Ground>();
             currentGroundList.Add(ground);
+            currentGroundList.Add(kutular1);
             //currentGroundList.Add(ground2);
             //currentGroundList.Add(ground3);
 
@@ -71,23 +74,30 @@ namespace ProjectRed
 
             KeyboardState keyboardState = Keyboard.GetState();
 
-            // TODO: Add your update logic here
-            if (keyboardState.IsKeyDown(Keys.D))
-            {
-                if (mario.position.X < 1366 - mario.width)
-                {
-                    mario.position.X += mario.width;
-                }
-            }
+            int windowWigth = graphics.PreferredBackBufferWidth;
+            //int windowHeight = graphics.PreferredBackBufferHeight;
+            int marioWidth = mario.width;
 
+            // TODO: Add your update logic here
             if (keyboardState.IsKeyDown(Keys.A))
             {
                 if (mario.position.X > 0)
                 {
-                    mario.position.X -= mario.width;
+                    mario.position.X -= marioWidth / 2;
                 }
-                
             }
+            if (keyboardState.IsKeyDown(Keys.D))
+            {
+                if (mario.position.X < windowWigth - marioWidth)
+                {
+                    mario.position.X += marioWidth / 2;
+                }
+            }
+            if (keyboardState.IsKeyDown(Keys.W))
+            {
+                mario.position.Y += marioWidth / 2;
+            }
+
 
             base.Update(gameTime);
         }
