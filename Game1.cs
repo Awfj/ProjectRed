@@ -10,7 +10,7 @@ namespace ProjectRed
     public class Game1 : Game
     {
         Song song;
-
+        Player mario;
         Ground ground, ground2, ground3, kutular1, boru1, boru2, boru4, boru5, kutular2, kutular3, boru3,
                 kutular4, kutular5, kutular6, kutular7, kutular8, miniboru1;
         List<Ground> currentGroundList;
@@ -30,20 +30,22 @@ namespace ProjectRed
 
             graphics.PreferredBackBufferWidth = 1366;
             graphics.PreferredBackBufferHeight = 768;
-            graphics.IsFullScreen = true;
+            graphics.IsFullScreen = false;
         }
 
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            ground = new Ground(Content, "aa", 0, 648);
-            ground2 = new Ground(Content, "aa", 1280, 648);
-            ground3 = new Ground(Content, "aa", 2560, 648);
+            mario = new Player(Content);
+            ground = new Ground(Content, mario, "aa", 0, 650);
+            //ground = new Ground(Content, mario, "aa", 0, 648);
+            //ground2 = new Ground(Content, mario, "aa", 1280, 648);
+            //ground3 = new Ground(Content, mario, "aa", 2560, 648);
 
             currentGroundList = new List<Ground>();
             currentGroundList.Add(ground);
-            currentGroundList.Add(ground2);
-            currentGroundList.Add(ground3);
+            //currentGroundList.Add(ground2);
+            //currentGroundList.Add(ground3);
 
             base.Initialize();
         }
@@ -56,7 +58,7 @@ namespace ProjectRed
 
             song = Content.Load<Song>("music_background");
             MediaPlayer.IsRepeating = true;
-            MediaPlayer.Play(song);
+            //MediaPlayer.Play(song);
             MediaPlayer.Volume = (float)0.4;
 
             // TODO: use this.Content to load your game content here
@@ -67,8 +69,25 @@ namespace ProjectRed
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            KeyboardState keyboardState = Keyboard.GetState();
 
+            // TODO: Add your update logic here
+            if (keyboardState.IsKeyDown(Keys.D))
+            {
+                if (mario.position.X < 1366 - mario.width)
+                {
+                    mario.position.X += mario.width;
+                }
+            }
+
+            if (keyboardState.IsKeyDown(Keys.A))
+            {
+                if (mario.position.X > 0)
+                {
+                    mario.position.X -= mario.width;
+                }
+                
+            }
 
             base.Update(gameTime);
         }
@@ -88,6 +107,7 @@ namespace ProjectRed
             }
 
             spriteBatch.Draw(background, bgposition, Color.White);
+            spriteBatch.Draw(mario.currentTexture, mario.position, Color.White);
 
             foreach (var gnd in currentGroundList)
             {

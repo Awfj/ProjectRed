@@ -13,14 +13,15 @@ namespace ProjectRed
     internal class Ground
     {
         public ContentManager content;
+        public Player player;
         public Texture2D texture;
         public Vector2 position;
         public int width, height;
         public Rectangle gnd;
 
-        public Ground(ContentManager content, string tex, int x, int y)
+        public Ground(ContentManager content, Player player, string tex, int x, int y)
         {
-            //this.player = player;
+            this.player = player;
             this.content = content;
             texture = content.Load<Texture2D>(tex);
             width = texture.Width;
