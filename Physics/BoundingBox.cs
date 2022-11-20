@@ -8,8 +8,28 @@ using System.Threading.Tasks;
 
 namespace ProjectRed
 {
-    //public struct AABB
-    public class AABB
+    public struct BoundingBox
+    {
+        public Vector2 center;
+        public Vector2 halfSize;
+
+        public BoundingBox(Vector2 center, Vector2 halfSize)
+        {
+            this.center = center;
+            this.halfSize = halfSize;
+        }
+
+        public bool Overlaps(BoundingBox other)
+        {
+            if (Math.Abs(center.X - other.center.X) > halfSize.X + other.halfSize.X ||
+                Math.Abs(center.Y - other.center.Y) > halfSize.Y + other.halfSize.Y)
+            {
+                return false;
+            }
+            return true;
+        }
+    }
+    /*public class AABB
     {
         public Vector2 center;
         public Vector2 halfSize;
@@ -29,5 +49,5 @@ namespace ProjectRed
             }
             return true;
         }
-    }
+    }*/
 }

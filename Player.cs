@@ -23,7 +23,7 @@ namespace ProjectRed
             Player.content = content;
             textureStandRight = content.Load<Texture2D>("texture_stand_right");
 
-            AABB a = new AABB();
+            BoundingBox a = new BoundingBox();
             currentTexture = textureStandRight;
             width = currentTexture.Width;
             height = currentTexture.Height;

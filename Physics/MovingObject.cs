@@ -10,48 +10,45 @@ namespace ProjectRed
 {
     public class MovingObject
     {
-        public Vector2 mOldPosition;
-        public Vector2 mPosition;
+        public Vector2 oldPosition;
+        public Vector2 position;
 
-        public Vector2 mOldSpeed;
-        public Vector2 mSpeed;
+        public Vector2 oldSpeed;
+        public Vector2 speed;
 
-        public Vector2 mScale;
+        public Vector2 scale;
 
-        public AABB mAABB;
-        public Vector2 mAABBOffset;
+        public BoundingBox boundingBox;
+        public Vector2 boundingBoxOffset;
 
-        public bool mPushedRightWall;
-        public bool mPushesRightWall;
+        public bool pushedRightWall;
+        public bool pushesRightWall;
         
-        public bool mPushedLeftWall;
-        public bool mPushesLeftWall;
+        public bool pushedLeftWall;
+        public bool pushesLeftWall;
 
-        public bool mWasOnGround;
-        public bool mOnGround;
-
-        public bool mWasOnCeiling;
-        public bool mArCeiing;
+        public bool wasOnGround;
+        public bool onGround;
 
         public void UpdatePhysics()
         {
-            mOldPosition = mPosition;
-            mOldSpeed = mSpeed;
+            oldPosition = position;
+            oldSpeed = speed;
 
-            mWasOnGround = mOnGround;
-            mPushedRightWall = mPushesRightWall;
-            mPushedLeftWall = mPushesLeftWall;
+            wasOnGround = onGround;
+            pushedRightWall = pushesRightWall;
+            pushedLeftWall = pushesLeftWall;
 
             //mPosition += mSpeed * Time.deltaTIme;
 
-            if (mPosition.Y < 0.0f)
+            if (position.Y < 0.0f)
             {
-                mPosition.Y = 0.0f;
-                mOnGround = true;
+                position.Y = 0.0f;
+                onGround = true;
             }
-            else mOnGround = false;
+            else onGround = false;
 
-            mAABB.center = mPosition + mAABBOffset;
+            boundingBox.center = position + boundingBoxOffset;
         }
     }
 }
