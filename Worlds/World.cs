@@ -15,18 +15,27 @@ namespace ProjectRed
     {
         internal Texture2D background;
         internal Rectangle worldRectangle;
-        List<Sprite> sprites;
+        internal List<Sprite> sprites;
+        internal Mario mario;
         internal int end;
 
         internal virtual void LoadContent(ContentManager content) { }
 
         internal void Update(GameTime gameTime)
         {
+            foreach (Sprite sprite in sprites)
+            {
+                sprite.Update(gameTime, sprites);
+            }
         }
 
         internal void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(background, worldRectangle, Color.White);
+            foreach(Sprite sprite in sprites)
+            {
+                sprite.Draw(spriteBatch);
+            }
         }
     }
 }

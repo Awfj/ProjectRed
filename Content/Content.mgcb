@@ -55,6 +55,18 @@
 /processorParam:Quality=Best
 /build:music_background.mp3
 
+#begin sprites/mario.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:sprites/mario.png
+
 #begin texture_stand_right.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -67,7 +79,7 @@
 /processorParam:TextureFormat=Color
 /build:texture_stand_right.png
 
-#begin worlds/world_1-1.png
+#begin worlds/world_1_1.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -77,5 +89,5 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:worlds/world_1-1.png
+/build:worlds/world_1_1.png
 
