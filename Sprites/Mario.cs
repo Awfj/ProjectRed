@@ -13,6 +13,9 @@ namespace ProjectRed
     internal class Mario : MovableSprite
     {
         static Texture2D texture;
+        internal enum Level { Big };
+        internal enum State { Standing };
+        private FrameSelector bigStand;
 
         internal Mario(int x, int y)
         {
@@ -22,6 +25,11 @@ namespace ProjectRed
         internal static void LoadContent(ContentManager content)
         {
             texture = content.Load<Texture2D>("sprites/mario");
+        }
+
+        internal void Init()
+        {
+            List<Rectangle> standList = new();
         }
 
         internal override void Update(GameTime gameTime, List<Sprite> sprites)

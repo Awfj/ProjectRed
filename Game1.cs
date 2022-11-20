@@ -12,6 +12,7 @@ namespace ProjectRed
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
         World currentWorld;
+        Camera camera;
 
         /*Song song;
         Player mario;
@@ -55,6 +56,8 @@ namespace ProjectRed
             //currentGroundList.Add(kutular1);
             //currentGroundList.Add(ground2);
             //currentGroundList.Add(ground3);
+
+            camera = new Camera();
 
             base.Initialize();
         }
@@ -109,6 +112,7 @@ namespace ProjectRed
                 mario.position.Y += marioWidth / 2;
             }*/
 
+            camera.Update();
 
             base.Update(gameTime);
         }
@@ -116,7 +120,7 @@ namespace ProjectRed
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Pink);
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, null, null, null, null, camera.Transform);
 
             currentWorld.Draw(spriteBatch);
 
