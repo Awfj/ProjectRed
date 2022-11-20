@@ -84,7 +84,7 @@ namespace ProjectRed
                 Exit();
             }
 
-            currentWorld.Update(gameTime);
+            currentWorld.Update(gameTime, camera);
 
             //KeyboardState keyboardState = Keyboard.GetState();
 

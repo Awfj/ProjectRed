@@ -11,6 +11,7 @@ namespace ProjectRed
     internal class Sprite
     {
         internal Rectangle positionRectangle;
+        internal Rectangle sourceRectangle;
 
         internal virtual void Update(GameTime gameTime, List<Sprite> sprites) { }
         internal virtual void Draw(SpriteBatch spriteBatch) { }

@@ -21,11 +21,24 @@ namespace ProjectRed
 
         internal virtual void LoadContent(ContentManager content) { }
 
-        internal void Update(GameTime gameTime)
+        internal void Update(GameTime gameTime, Camera camera)
         {
+            camera.UpdateLoopPosition(mario.positionRectangle);
+            //if (mario.Level)
+
             foreach (Sprite sprite in sprites)
             {
                 sprite.Update(gameTime, sprites);
+            }
+
+            if (mario.positionRectangle.X < camera.LeftRestrict)
+            {
+                mario.positionRectangle.X = camera.LeftRestrict;
+            }
+
+            if (mario.positionRectangle.X > end)
+            {
+
             }
         }
 
