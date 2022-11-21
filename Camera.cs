@@ -1,9 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectRed
 {
@@ -37,8 +32,8 @@ namespace ProjectRed
 
         internal void Update()
         {
-            Transform = Matrix.CreateTranslation(-position.X, -position.Y, 0) 
-                * Matrix.CreateScale(new Vector3(Zoom, Zoom, 1));
+            Transform = Matrix.CreateTranslation(-position.X, -position.Y, 0) * 
+                Matrix.CreateScale(new Vector3(Zoom, Zoom, 1));
         }
     }
 }

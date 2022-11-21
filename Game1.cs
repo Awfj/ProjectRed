@@ -31,6 +31,9 @@ namespace ProjectRed
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferWidth = Constants.viewWidth;
+            graphics.PreferredBackBufferHeight = Constants.viewHeight;
+
             Content.RootDirectory = "Content";
             currentWorld = new World_1_1();
             /*

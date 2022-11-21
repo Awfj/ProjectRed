@@ -8,9 +8,9 @@ namespace ProjectRed
 {
     internal class MovableSprite : Sprite
     {
-        float xVelocity;
-        float yVelocity;
-        float xAcceleration;
-        float yAcceleration;
+        internal float xVelocity;
+        internal float yVelocity;
+        internal float xAcceleration;
+        internal float yAcceleration;
     }
 }
