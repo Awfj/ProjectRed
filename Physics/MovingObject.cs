@@ -18,7 +18,7 @@ namespace ProjectRed
 
         public Vector2 scale;
 
-        public BoundingBox boundingBox;
+        public AABB boundingBox;
         public Vector2 boundingBoxOffset;
 
         public bool pushedRightWall;

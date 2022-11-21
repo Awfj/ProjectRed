@@ -82,10 +82,7 @@ namespace ProjectRed
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-            {
-                Exit();
-            }
+            if (Keyboard.GetState().IsKeyDown(Keys.Escape)) Exit();
 
             currentWorld.Update(gameTime, camera);
 
@@ -123,7 +120,8 @@ namespace ProjectRed
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Pink);
-            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, null, null, null, null, camera.Transform);
+            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, 
+                null, null, null, null, camera.Transform);
 
             currentWorld.Draw(spriteBatch);
 

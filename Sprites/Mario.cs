@@ -25,7 +25,7 @@ namespace ProjectRed
 
         internal Mario(int x, int y)
         {
-            positionRectangle = new Rectangle(x, y, 11, 16);
+            positionRectangle = new(x, y, 11, 16);
             Init();
         }
 
@@ -177,7 +177,8 @@ namespace ProjectRed
             }
             else
             {
-                spriteBatch.Draw(texture, positionRectangle, sourceRectangle, Color.White, 0f, Vector2.Zero, SpriteEffects.FlipHorizontally, 0);
+                spriteBatch.Draw(texture, positionRectangle, sourceRectangle, Color.White, 
+                    0f, Vector2.Zero, SpriteEffects.FlipHorizontally, 0);
             }
         }
     }

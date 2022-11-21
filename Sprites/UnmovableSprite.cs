@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjectRed
 {
-    internal class UnmovableSprite
+    internal class UnmovableSprite : Sprite
     {
         
     }

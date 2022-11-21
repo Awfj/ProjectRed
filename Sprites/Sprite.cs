@@ -10,6 +10,7 @@ namespace ProjectRed
 {
     internal class Sprite
     {
+        internal bool canRemove;
         internal Rectangle positionRectangle;
         internal Rectangle sourceRectangle;
 
